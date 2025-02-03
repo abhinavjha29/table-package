@@ -135,7 +135,7 @@ function usePosition() {
   return usePositioner(deleteButtonPositioner, []);
 }
 
-const TableDeleteButton = ({ Component }) => {
+export const TableDeleteButton = ({ Component }) => {
   const position = usePosition();
   const { customDispatch, deleteTable } = useCommands();
 
@@ -169,5 +169,3 @@ const TableDeleteButton = ({ Component }) => {
     </PositionerPortal>
   );
 };
-
-export default TableDeleteButton;

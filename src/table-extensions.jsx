@@ -37,8 +37,8 @@ import {
 import { columnResizing } from "./table-column-resizing";
 import { createTableControllerPlugin } from "./table-plugins";
 import { injectControllers } from "./utils/controller";
-import { TableControllerCellView } from "./views/table-controller-cell-view";
-import { TableView } from "./views/table-view";
+import { TableControllerCellView } from "./views/table-controller-cell-view.jsx";
+import { TableView } from "./views/table-view.jsx";
 
 export class TableExtension extends BaseTableExtension {
   get name() {

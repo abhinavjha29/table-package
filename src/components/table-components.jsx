@@ -1,9 +1,9 @@
 import React from "react";
 import { useHelpers } from "@remirror/react-core";
 
-import { TableCellMenu } from "./table-cell-menu";
-import { TableDeleteRowColumnButton } from "./table-delete-row-column-button";
-import { TableDeleteButton } from "./table-delete-table-button";
+import { TableCellMenu } from "./table-cell-menu.jsx";
+import { TableDeleteRowColumnButton } from "./table-delete-row-column-button.jsx";
+import { TableDeleteButton } from "./table-delete-table-button.jsx";
 
 const TableComponents = ({
   enableTableCellMenu = true,

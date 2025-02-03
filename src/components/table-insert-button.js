@@ -6,7 +6,7 @@ import { ExtensionTablesTheme } from "@remirror/theme";
 import { addColumn, addRow } from "../react-table-commands";
 import { h } from "../utils/dom";
 
-function shouldHideInsertButton(attrs, e) {
+export function shouldHideInsertButton(attrs, e) {
   if (attrs.col !== -1) {
     return (
       e.clientX < attrs.triggerRect.left - 400 ||

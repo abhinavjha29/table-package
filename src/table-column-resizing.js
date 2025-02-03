@@ -14,14 +14,14 @@ import {
   updateColumnsOnResize as updateColumns,
 } from "@remirror/pm/tables";
 import { Decoration, DecorationSet } from "@remirror/pm/view";
-import { TableView } from "./views/table-view";
-import { updateColumnsOnResizeTable } from "./resize-col";
+import { TableView } from "./views/table-view.jsx";
+import { updateColumnsOnResizeTable } from "./resize-col.js";
 
-function pointsAtCell($pos) {
+export function pointsAtCell($pos) {
   return $pos.parent.type.spec.tableRole == "row" && $pos.nodeAfter;
 }
 
-function setAttr(attrs, name, value) {
+export function setAttr(attrs, name, value) {
   let result = {};
   for (let prop in attrs) result[prop] = attrs[prop];
   result[name] = value;
@@ -151,13 +151,13 @@ function handleMouseMove(
   }
 }
 
-function handleMouseLeave(view) {
+export function handleMouseLeave(view) {
   let pluginState = key.getState(view.state);
   if (pluginState.activeHandle > -1 && !pluginState.dragging)
     updateHandle(view, -1);
 }
 
-function handleMouseDown(view, event, cellMinWidth) {
+export function handleMouseDown(view, event, cellMinWidth) {
   let pluginState = key.getState(view.state);
   if (pluginState.activeHandle == -1 || pluginState.dragging) return false;
 
