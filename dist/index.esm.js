@@ -59411,22 +59411,22 @@ var _createEmotion = createEmotion({
     css = _createEmotion.css;
 
 var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5;
-var preselectBorderColor = getThemeVar('color', 'table', 'preselect', 'border');
-var preselectControllerBackgroundColor = getThemeVar('color', 'table', 'preselect', 'controller');
+var preselectBorderColor = getThemeVar("color", "table", "preselect", "border");
+var preselectControllerBackgroundColor = getThemeVar("color", "table", "preselect", "controller");
 function getTableStyle(attrs) {
   var preselectClass = css(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    /* Make the border-style 'double' instead of 'solid'. This works because 'double' has a higher priority than 'solid' */\n    border-style: double;\n    border-color: ", ";\n  "])), preselectBorderColor);
   var preselectControllerClass = css(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    ", "\n    background-color: ", ";\n  "])), preselectClass, preselectControllerBackgroundColor);
-  var classNames = '';
+  var classNames = "";
   if (attrs.preselectColumn !== -1) {
     classNames = css(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n      & table.", " tbody tr {\n        th,\n        td {\n          &:nth-child(", ") {\n            ", ";\n          }\n        }\n        th.", ":nth-child(", ") {\n          ", "\n        }\n      }\n    "])), extensionTablesTheme.TABLE, attrs.preselectColumn + 1, preselectClass, extensionTablesTheme.TABLE_CONTROLLER, attrs.preselectColumn + 1, preselectControllerClass);
   } else if (attrs.preselectRow !== -1) {
-    classNames = css(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\n      & table.", " tbody tr:nth-child(", ") {\n        td,\n        th {\n          ", ";\n        }\n        th.", " {\n          ", "\n        }\n      }\n    "])), extensionTablesTheme.TABLE, attrs.preselectRow + 1, preselectClass, extensionTablesTheme.TABLE_CONTROLLER, preselectControllerClass);
+    classNames = css(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\n      &\n        table.", "\n        tbody\n        tr:nth-child(", ") {\n        td,\n        th {\n          ", ";\n        }\n        th.", " {\n          ", "\n        }\n      }\n    "])), extensionTablesTheme.TABLE, attrs.preselectRow + 1, preselectClass, extensionTablesTheme.TABLE_CONTROLLER, preselectControllerClass);
   } else if (attrs.preselectTable) {
-    classNames = css(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["\n      &.", " table.", " tbody tr {\n        td,\n        th {\n          ", ";\n        }\n        th.", " {\n          ", "\n        }\n      }\n    "])), extensionTablesTheme.TABLE_PRESELECT_ALL, extensionTablesTheme.TABLE, preselectClass, extensionTablesTheme.TABLE_CONTROLLER, preselectControllerClass);
+    classNames = css(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["\n      &.", "\n        table.", "\n        tbody\n        tr {\n        td,\n        th {\n          ", ";\n        }\n        th.", " {\n          ", "\n        }\n      }\n    "])), extensionTablesTheme.TABLE_PRESELECT_ALL, extensionTablesTheme.TABLE, preselectClass, extensionTablesTheme.TABLE_CONTROLLER, preselectControllerClass);
   }
   return classNames;
 }
-var key = new PluginKey('remirrorTableControllerPluginKey');
+var key = new PluginKey("remirrorTableControllerPluginKey");
 function createTableControllerPlugin() {
   return new Plugin({
     key: key,
@@ -59483,7 +59483,7 @@ var ControllerState = /*#__PURE__*/function () {
     key: "apply",
     value: function apply(tr) {
       this.values.tableNodeResult = findParentNodeOfType({
-        types: 'table',
+        types: "table",
         selection: tr.selection
       });
       var props = tr.getMeta(key);

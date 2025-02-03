@@ -1,6 +1,6 @@
 {
   "name": "react-table-extension",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "author": "Abhinav Jha",
   "description": "Create tables with nested react components.",
   "keywords": [
@@ -16,21 +16,19 @@
   "type": "module",
   "exports": {
     ".": {
-      "types": "./dist-types/index.d.ts",
-      "import": "./dist/remirror-extension-react-tables.js",
-      "require": "./dist/remirror-extension-react-tables.cjs"
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.cjs.js"
     },
     "./package.json": "./package.json"
   },
-  "main": "./dist/remirror-extension-react-tables.cjs",
-  "module": "./dist/remirror-extension-react-tables.js",
-  "types": "./dist-types/index.d.ts",
+  "main": "./dist/index.cjs.js",
+  "module": "./dist/index.esm.js",
   "files": [
     "dist",
     "dist-types"
   ],
   "scripts": {
-    "build": "rollup -c"
+    "build": "remirror-cli build"
   },
   "dependencies": {
     "@babel/runtime": "^7.22.3",
@@ -81,16 +79,16 @@
     "access": "public",
     "exports": {
       ".": {
-        "types": "./dist/remirror-extension-react-tables.d.ts",
-        "import": "./dist/remirror-extension-react-tables.js",
-        "require": "./dist/remirror-extension-react-tables.cjs"
+        "types": "./dist/index.d.ts",
+        "import": "./dist/index.esm.js",
+        "require": "./dist/index.cjs.js"
       },
       "./package.json": "./package.json"
     },
-    "main": "./dist/remirror-extension-react-tables.cjs",
-    "module": "./dist/remirror-extension-react-tables.js",
+    "main": "./dist/index.cjs.js",
+    "module": "./dist/index.esm.js",
     "type": "module",
-    "types": "./dist/remirror-extension-react-tables.d.ts"
+    "types": "./dist/index.d.ts"
   },
   "@remirror": {
     "sizeLimit": "20 KB"

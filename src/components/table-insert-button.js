@@ -1,6 +1,5 @@
-import { EditorView } from "@remirror/core";
 import { addFill } from "@remirror/icons";
-import { TableRect } from "@remirror/pm/tables";
+
 import { ExtensionTablesTheme } from "@remirror/theme";
 
 import { addColumn, addRow } from "../react-table-commands";

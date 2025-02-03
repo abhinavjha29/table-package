@@ -1,4 +1,4 @@
-import { EditorView, findParentNodeOfType } from "@remirror/core";
+import { findParentNodeOfType } from "@remirror/core";
 import { ExtensionTablesTheme } from "@remirror/theme";
 
 import { createControllerEvents } from "../utils/controller";

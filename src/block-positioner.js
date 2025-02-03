@@ -1,8 +1,4 @@
-import {
-  findParentNodeOfType,
-  FindProsemirrorNodeResult,
-  Selection,
-} from "@remirror/core";
+import { findParentNodeOfType } from "@remirror/core";
 import {
   blockNodePositioner,
   Positioner,

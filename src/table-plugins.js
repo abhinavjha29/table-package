@@ -1,16 +1,21 @@
-import { css } from '@emotion/css';
-import {
-  EditorState,
-  findParentNodeOfType,
-} from '@remirror/core';
-import { Plugin, PluginKey, Transaction } from '@remirror/pm/state';
-import { Decoration, DecorationSet } from '@remirror/pm/view';
-import { ExtensionTablesTheme, getThemeVar } from '@remirror/theme';
+import { css } from "@emotion/css";
+import { findParentNodeOfType } from "@remirror/core";
+import { Plugin, PluginKey, Transaction } from "@remirror/pm/state";
+import { Decoration, DecorationSet } from "@remirror/pm/view";
+import { ExtensionTablesTheme, getThemeVar } from "@remirror/theme";
 
-import { InsertButtonAttrs } from './components/table-insert-button';
-
-const preselectBorderColor = getThemeVar('color', 'table', 'preselect', 'border');
-const preselectControllerBackgroundColor = getThemeVar('color', 'table', 'preselect', 'controller');
+const preselectBorderColor = getThemeVar(
+  "color",
+  "table",
+  "preselect",
+  "border"
+);
+const preselectControllerBackgroundColor = getThemeVar(
+  "color",
+  "table",
+  "preselect",
+  "controller"
+);
 
 export function getTableStyle(attrs) {
   const preselectClass = css`
@@ -24,7 +29,7 @@ export function getTableStyle(attrs) {
     background-color: ${preselectControllerBackgroundColor};
   `;
 
-  let classNames = '';
+  let classNames = "";
 
   if (attrs.preselectColumn !== -1) {
     classNames = css`
@@ -35,14 +40,18 @@ export function getTableStyle(attrs) {
             ${preselectClass};
           }
         }
-        th.${ExtensionTablesTheme.TABLE_CONTROLLER}:nth-child(${attrs.preselectColumn + 1}) {
+        th.${ExtensionTablesTheme.TABLE_CONTROLLER}:nth-child(${attrs.preselectColumn +
+          1}) {
           ${preselectControllerClass}
         }
       }
     `;
   } else if (attrs.preselectRow !== -1) {
     classNames = css`
-      & table.${ExtensionTablesTheme.TABLE} tbody tr:nth-child(${attrs.preselectRow + 1}) {
+      &
+        table.${ExtensionTablesTheme.TABLE}
+        tbody
+        tr:nth-child(${attrs.preselectRow + 1}) {
         td,
         th {
           ${preselectClass};
@@ -54,7 +63,10 @@ export function getTableStyle(attrs) {
     `;
   } else if (attrs.preselectTable) {
     classNames = css`
-      &.${ExtensionTablesTheme.TABLE_PRESELECT_ALL} table.${ExtensionTablesTheme.TABLE} tbody tr {
+      &.${ExtensionTablesTheme.TABLE_PRESELECT_ALL}
+        table.${ExtensionTablesTheme.TABLE}
+        tbody
+        tr {
         td,
         th {
           ${preselectClass};
@@ -69,7 +81,7 @@ export function getTableStyle(attrs) {
   return classNames;
 }
 
-const key = new PluginKey('remirrorTableControllerPluginKey');
+const key = new PluginKey("remirrorTableControllerPluginKey");
 
 export { key as tableControllerPluginKey };
 
@@ -92,7 +104,8 @@ export function createTableControllerPlugin() {
           return null;
         }
 
-        const { tableNodeResult, predelete, preselectTable } = controllerState.values;
+        const { tableNodeResult, predelete, preselectTable } =
+          controllerState.values;
 
         if (tableNodeResult) {
           const styleClassName = getTableStyle(controllerState.values);
@@ -135,7 +148,7 @@ class ControllerState {
 
   apply(tr) {
     this.values.tableNodeResult = findParentNodeOfType({
-      types: 'table',
+      types: "table",
       selection: tr.selection,
     });
 

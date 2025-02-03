@@ -1,6 +1,6 @@
-import { EditorView, range, throttle, Transaction } from "@remirror/core";
+import { range, throttle } from "@remirror/core";
 import { TableMap, updateColumnsOnResize } from "@remirror/pm/tables";
-import { Decoration } from "@remirror/pm/view";
+
 import { ExtensionTablesTheme } from "@remirror/theme";
 
 import TableInsertButton, {
