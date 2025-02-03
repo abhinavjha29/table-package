@@ -15,6 +15,7 @@ import {
 } from "@remirror/pm/tables";
 import { Decoration, DecorationSet } from "@remirror/pm/view";
 import { TableView } from "./views/table-view";
+import { updateColumnsOnResizeTable } from "./resize-col";
 
 function pointsAtCell($pos) {
   return $pos.parent.type.spec.tableRole == "row" && $pos.nodeAfter;
@@ -274,7 +275,14 @@ function displayColumnWidth(view, cell, width, cellMinWidth) {
     1;
   let dom = view.domAtPos($cell.start(-1)).node;
   while (dom.nodeName != "TABLE") dom = dom.parentNode;
-  updateColumns(table, dom.firstChild, dom, cellMinWidth, col, width);
+  updateColumnsOnResizeTable(
+    table,
+    dom.firstChild,
+    dom,
+    cellMinWidth,
+    col,
+    width
+  );
 }
 
 function zeroes(n) {

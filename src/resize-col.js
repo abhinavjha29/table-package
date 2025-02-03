@@ -1,4 +1,4 @@
-function updateColumnsOnResize(
+export function updateColumnsOnResizeTable(
   node,
   colgroup,
   table,
