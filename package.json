@@ -1,0 +1,91 @@
+{
+  "name": "react-table-extension",
+  "version": "3.0.1",
+  "author": "Abhinav Jha",
+  "description": "Create tables with nested react components.",
+  "keywords": [
+    "remirror",
+    "preset",
+    "react",
+    "tables",
+    "prosemirror",
+    "table editing"
+  ],
+  "license": "MIT",
+  "sideEffects": false,
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist-types/index.d.ts",
+      "import": "./dist/remirror-extension-react-tables.js",
+      "require": "./dist/remirror-extension-react-tables.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/remirror-extension-react-tables.cjs",
+  "module": "./dist/remirror-extension-react-tables.js",
+  "types": "./dist-types/index.d.ts",
+  "files": [
+    "dist",
+    "dist-types"
+  ],
+  "scripts": {
+    "build": "remirror-cli build"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.22.3",
+    "@emotion/css": "^11.11.0",
+    "@linaria/core": "4.2.10",
+    "@remirror/core": "3.0.1",
+    "@remirror/core-utils": "3.0.0",
+    "@remirror/extension-positioner": "3.0.1",
+    "@remirror/extension-tables": "3.0.1",
+    "@remirror/icons": "3.0.0",
+    "@remirror/messages": "3.0.0",
+    "@remirror/react-components": "3.0.1",
+    "@remirror/react-core": "3.0.1",
+    "@remirror/react-hooks": "3.0.1",
+    "@remirror/theme": "3.0.0"
+  },
+  "devDependencies": {
+    "@remirror/cli": "^1.0.8",
+    "@remirror/pm": "3.0.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "y-webrtc": "^10.2.5",
+    "yjs": "^13.6.1"
+  },
+  "peerDependencies": {
+    "@remirror/pm": "^3.0.0",
+    "react": "^16.14.0 || ^17 || ^18",
+    "react-dom": "^16.14.0 || ^17 || ^18"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    },
+    "react-dom": {
+      "optional": true
+    }
+  },
+  "publishConfig": {
+    "access": "public",
+    "exports": {
+      ".": {
+        "types": "./dist/remirror-extension-react-tables.d.ts",
+        "import": "./dist/remirror-extension-react-tables.js",
+        "require": "./dist/remirror-extension-react-tables.cjs"
+      },
+      "./package.json": "./package.json"
+    },
+    "main": "./dist/remirror-extension-react-tables.cjs",
+    "module": "./dist/remirror-extension-react-tables.js",
+    "type": "module",
+    "types": "./dist/remirror-extension-react-tables.d.ts"
+  },
+  "@remirror": {
+    "sizeLimit": "20 KB"
+  }
+}
